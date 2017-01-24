@@ -15,9 +15,11 @@
     return view('welcome');
 });
 */
-Route::get('/','StaticPagesController@home');
-Route::get('/help','StaticPagesController@help');
-Route::get('/about','StaticPagesController@about');
+Route::get('/','StaticPagesController@home')->name('home');
+Route::get('/help','StaticPagesController@help')->name('help');
+Route::get('/about','StaticPagesController@about')->name('about');
+
+Route::get('/signup','UsersController@create')->name('signup');
 
 /*
 在上面代码的代码中，我们为 get 方法传递了两个参数，第一个参数指明了 URL，第二个参数指明了处理该 URL 的控制器动作。
